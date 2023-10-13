@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    display: flex;
+    width: 309px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 24px;
+    }
+
+    .nav-active {
+      text-decoration-line: underline;
+      
+    }
+  }
+}

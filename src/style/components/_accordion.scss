@@ -1,0 +1,38 @@
+main {
+  .accordion-container {
+    display: flex;
+    flex-direction: column;
+    margin: 31px 0%;
+    background-color: $grey-1;
+    border-radius: 5px;
+
+    .accordion-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $color-1;
+      border-radius: 5px;
+
+      h5 {
+        color: $white-1;
+        font-size: 24px;
+        margin-left: 18px;
+        line-height: 142.6%; /* 34.224px */
+      }
+
+      i {
+        width: 24px;
+        height: 14px;
+        color: $white-1;
+        margin-right: 18px;
+      }
+    }
+
+    p {
+      border-radius: 50px;
+      margin-top: 15px;
+      padding-bottom: 15px;
+      margin: 18px;
+    }
+  }
+}

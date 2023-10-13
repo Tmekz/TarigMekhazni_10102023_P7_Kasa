@@ -1,0 +1,27 @@
+.card {
+  width: 340px;
+  height: 340px;
+  margin: 50px;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  img {
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    color: $white-1;
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+}

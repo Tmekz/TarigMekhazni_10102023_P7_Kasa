@@ -1,0 +1,25 @@
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: $black-1;
+  height: 209px;
+
+
+  .kasa-copyrights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #footer-logo {
+      width: 122px;
+      height: 39.444px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #f8f8f8;
+      margin-top: 28px;
+    }
+  }
+}
