@@ -5,9 +5,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import About from "./pages/About";
 import Error404 from "./pages/Error404";
-import Housing from "./pages/Housing";
+import Accomodation from "./pages/Accomodation";
 
-// On importe les DB en local
+// On importe la DB en local
 import housesData from "./assets/data/housesDB.json";
 
 const App = () => {
@@ -17,8 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home housesData={housesData} />} />
         <Route
-          path="/housing/:id"
-          element={<Housing housesData={housesData} />}
+          path="/accomodation/:id"
+          element={<Accomodation housesData={housesData} />}
         />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Error404 />} />

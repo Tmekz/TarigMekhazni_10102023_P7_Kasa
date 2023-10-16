@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import Gallery from "../components/Gallery";
+import Slideshow from "../components/Slideshow";
 import Accordion from "../components/Accordion";
 
-const Housing = ({ housesData }) => {
+const Accomodation = ({ housesData }) => {
   const { id } = useParams();
   const house = housesData.find((house) => house.id === id);
-  console.log(house);
+
   // Convertir la notation en nombre car c'est une CDC
   const rating = parseInt(house.rating);
 
@@ -20,8 +20,8 @@ const Housing = ({ housesData }) => {
     ));
 
   return (
-    <main className="housing-main">
-      <Gallery house={house} />
+    <main className="accomodation-main">
+      <Slideshow house={house} />
       <div className="title-and-location">
         <div className="titles">
           <h1>{house.title}</h1>
@@ -45,17 +45,22 @@ const Housing = ({ housesData }) => {
           <div className="host-stars">{stars}</div>
         </div>
       </div>
-      <div className="description-gear">
-        <Accordion title={"Description"} content={house.description} />
-        <Accordion
-          title={"Equipements"}
-          content={house.equipments.map((equip, index) => (
-            <li key={index}>{equip}</li>
-          ))}
-        />
+      <div className="about-main-container">
+        <div className="accomodation-accordion-item">
+          {" "}
+          <Accordion title={"Description"} content={house.description} />
+        </div>
+        <div className="accomodation-accordion-item">
+          <Accordion
+            title={"Equipements"}
+            content={house.equipments.map((equip, index) => (
+              <li key={index}>{equip}</li>
+            ))}
+          />
+        </div>
       </div>
     </main>
   );
 };
 
-export default Housing;
+export default Accomodation;

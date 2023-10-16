@@ -1,26 +1,19 @@
 import React, { useState } from "react";
 
 const Accordion = ({ title, content }) => {
-  const [isContentVisible, setIsContentVisible] = useState(false);
-
-  const toggleContentVisibility = () => {
-    setIsContentVisible(!isContentVisible);
-  };
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div className="accordion-container">
-      {title && (
-        <div className="accordion-title-container">
-          <h5>{title}</h5>
-          <i
-            className={`fa-solid fa-chevron-${
-              isContentVisible ? "up" : "down"
-            }`}
-            onClick={toggleContentVisibility}
-          ></i>
-        </div>
-      )}
-      {title && isContentVisible && <p>{content}</p>}
+      <div
+        className="accordion-title-container"
+        onClick={() => setToggle(!toggle)}
+        style={{ userSelect: "none" }}
+      >
+        <h3>{title}</h3>
+        <i className={`fa-solid fa-chevron-${toggle ? "up" : "down"}`}></i>
+      </div>
+      {toggle && <p>{content}</p>}
     </div>
   );
 };

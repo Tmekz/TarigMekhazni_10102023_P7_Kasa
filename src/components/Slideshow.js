@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Gallery = ({ house }) => {
+const Slideshow = ({ house }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -41,4 +41,4 @@ const Gallery = ({ house }) => {
   );
 };
 
-export default Gallery;
+export default Slideshow;

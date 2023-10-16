@@ -6,10 +6,12 @@ import Logo from "../assets/logo/logo.png";
 const Header = () => {
   return (
     <header>
-      <NavLink to="/">
-        <img src={Logo} alt="Logo Kasa" />
+      <NavLink to="/" className={"logo-container"}>
+        <h1 className="kasa-title">
+          <img src={Logo} alt="Logo Kasa" />
+        </h1>
       </NavLink>
-      <nav>
+      <nav className="header-navigation">
         <NavLink
           to="/"
           className={(nav) => (nav.isActive ? "nav-active" : " ")}

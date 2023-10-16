@@ -3,7 +3,7 @@ footer {
   justify-content: center;
   background-color: $black-1;
   height: 209px;
-
+ 
 
   .kasa-copyrights {
     display: flex;
@@ -20,6 +20,10 @@ footer {
       font-size: 24px;
       color: #f8f8f8;
       margin-top: 28px;
+
+      @media screen and (max-width: 500px) {
+        font-size: 12px;
+      }
     }
   }
 }

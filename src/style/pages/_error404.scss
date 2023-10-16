@@ -23,5 +23,10 @@
     text-decoration: underline;
     margin-top: 182px;
     margin-bottom: 182px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
