@@ -24,13 +24,20 @@ a:visited {
   text-decoration: none;
 }
 
+body {
+  min-width: 330px;
+}
+
+#page-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header,
 main {
   margin: 40px 100px 63px 100px;
-}
-
-main {
-  min-height: 80vh;
 }
 
 @media screen and (max-width: 1024px) {
@@ -39,4 +46,3 @@ main {
     margin: 20px 20px 16px 20px;
   }
 }
-

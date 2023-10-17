@@ -13,17 +13,19 @@ import housesData from "./assets/data/housesDB.json";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home housesData={housesData} />} />
-        <Route
-          path="/accomodation/:id"
-          element={<Accomodation housesData={housesData} />}
-        />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-      <Footer />
+      <div id="page-container">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home housesData={housesData} />} />
+          <Route
+            path="/accomodation/:id"
+            element={<Accomodation housesData={housesData} />}
+          />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };
