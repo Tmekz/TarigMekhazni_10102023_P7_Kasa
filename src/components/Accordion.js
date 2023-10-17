@@ -8,7 +8,7 @@ const Accordion = ({ title, content }) => {
       <div
         className="accordion-title-container"
         onClick={() => setToggle(!toggle)}
-        style={{ userSelect: "none" }}
+       
       >
         <h3>{title}</h3>
         <i className={`fa-solid fa-chevron-${toggle ? "up" : "down"}`}></i>

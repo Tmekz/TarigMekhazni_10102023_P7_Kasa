@@ -9,12 +9,21 @@
     font-size: 288px;
     font-weight: 700;
     line-height: 142.6%;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 96px;
+    }
   }
 
   p {
     font-size: 36px;
     text-align: center;
     line-height: 142.6%;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 18px;
+      padding: 0 58px;
+    }
   }
 
   #error-link {
@@ -24,6 +33,10 @@
     margin-top: 182px;
     margin-bottom: 182px;
     transition: transform 0.5s;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 14px;
+    }
 
     &:hover {
       transform: scale(1.2);

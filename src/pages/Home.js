@@ -5,9 +5,6 @@ import BannerHomeXL from "../assets/home_banner/Home-Banner-XL.png";
 import { NavLink } from "react-router-dom";
 import Banner from "../components/Banner";
 
-// // On importe les DB en local
-// import housesData from "../assets/data/housesDB.json";
-
 const Home = ({ housesData }) => {
   return (
     <main className="home-main">

@@ -3,10 +3,19 @@
   justify-content: space-between;
   margin: 2.2% 0;
 
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+
   .titles {
     display: flex;
     flex-direction: column;
     width: 80%;
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
+
     h1 {
       font-size: 36px;
       line-height: 142.6%;
@@ -17,10 +26,28 @@
       line-height: 142.6%;
     }
 
+    @media screen and (max-width: 1024px) {
+      h1 {
+        font-size: 18px;
+      }
+      h2 {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .tags {
+        font-size: 10px;
+      }
+    }
+
     .tags-container {
       margin: 20px 0;
       display: flex;
       flex-wrap: wrap;
+
+      @media screen and (max-width: 500px) {
+        margin: 5px 0;
+      }
 
       .tags {
         display: flex;
@@ -34,6 +61,11 @@
         font-size: 14px;
         padding: 10px;
         height: 25px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 10px;
+          height: 18px;
+        }
       }
     }
   }
@@ -42,16 +74,36 @@
     display: flex;
     flex-direction: column;
 
-    // width: 20%;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .host-stars {
       text-align: right;
       margin-right: 20px;
       margin-top: 27px;
       width: 196px;
 
+      @media screen and (max-width: 500px) {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-right: 0px;
+        margin-top: 0px;
+      }
+
+     
+
       i {
         color: #e3e3e3;
         font-size: 25px;
+
+        @media screen and (max-width: 1024px) {
+          font-size: 15px;
+        }
       }
 
       .i-colored {
@@ -63,19 +115,40 @@
       display: flex;
       justify-content: space-evenly;
 
-      p {
+      @media screen and (max-width: 500px) {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .break-words {
         font-size: 18px;
         width: 93px;
         height: 52px;
         line-height: 142.6%;
         text-align: right;
         margin-top: 6px;
+        white-space: pre-line;
+
+        @media screen and (max-width: 500px) {
+          display: flex;
+          font-size: 12px;
+          margin-top: 0;
+          align-items: center;
+          width: 60px;
+          margin-right: 10px;
+        }
       }
+
       img {
         object-fit: cover;
         width: 64px;
         height: 64px;
         border-radius: 50px;
+
+        @media screen and (max-width: 500px) {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
   }
@@ -85,8 +158,17 @@
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .accomodation-accordion-item {
     width: 46%;
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
 
     .accordion-container {
       margin: 0 auto;

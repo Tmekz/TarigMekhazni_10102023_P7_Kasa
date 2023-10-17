@@ -10,22 +10,24 @@ const Banner = () => {
   const currentRoute = useLocation().pathname;
   const aboutPage = currentRoute === "/about";
 
+  const determineScreenSize = () => {
+    if (window.innerWidth <= 500) {
+      setSmallScreen(true);
+    } else {
+      setSmallScreen(false);
+    }
+  };
+
   useEffect(() => {
+    // Appel initial pour déterminer la taille de l'écran
+    determineScreenSize();
+
     // Écoute les changements de la largeur de l'écran
-    const handleResize = () => {
-      if (window.innerWidth <= 500) {
-        setSmallScreen(true);
-      } else {
-        setSmallScreen(false);
-      }
-    };
+    window.addEventListener("resize", determineScreenSize);
 
-    // "resize" permet de garder un oeil sur le redimensionnement de l'écran
-    window.addEventListener("resize", handleResize);
-
-    // permet de remove l'event pour sauver de la mémoire
+    // Nettoie l'écouteur d'événement lors du démontage du composant
     // return () => {
-    //   window.removeEventListener("resize", handleResize);
+    //   window.removeEventListener("resize", determineScreenSize);
     // };
   }, []);
 

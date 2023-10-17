@@ -2,8 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   border-radius: 25px;
   background-color: $grey-1;
-  margin-top: 43px;
-  padding: 25px 0;
+  gap: 50px;
+  padding: 50px 10px;
+
+  @media screen and (max-width: 800px) {
+    background-color: $white-1;
+    padding: 25px 0;
+    gap: 20px;
+  }
 }
