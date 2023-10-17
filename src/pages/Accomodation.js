@@ -1,16 +1,30 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import Accordion from "../components/Accordion";
-
+import { useEffect, useState } from "react";
 
 const Accomodation = ({ housesData }) => {
   const { id } = useParams();
-  const house = housesData.find((house) => house.id === id);
+  const [foundIdData, setFoundIdData] = useState(null);
+  const navigate = useNavigate();
+
+  // Utilisez un effet pour mettre à jour house en fonction de l'ID
+  useEffect(() => {
+    const findIdUrl = housesData.find((item) => item.id === id);
+    if (findIdUrl) {
+      setFoundIdData(findIdUrl);
+    } else {
+      navigate("/404");
+    }
+  }, [id, housesData, navigate]);
+
+  if (!foundIdData) {
+    return null;
+  }
 
   // Convertir la notation en nombre car c'est une CDC
-  const rating = parseInt(house.rating);
-
-  // Générer un tableau d'étoiles en fonction de la notation avec en base des étoiles grises et si rated alors class i-colored.Array(5) crée un tableau vide de longueur 5. Cependant, ce tableau est composé de valeurs indéfinies, ce qui signifie qu'il est vide mais a une longueur de 5. .fill(null) remplit ce tableau vide avec la valeur null. En pratique, cette étape ne modifie pas les valeurs du tableau, car les valeurs null seront écrasées par la suite. "_" est utilisé comme une variable anonyme pour représenter les éléments de l'array généré par .map(). Dans ce cas, nous n'avons pas besoin d'utiliser la valeur de chaque élément de l'array, nous utilisons donc _ pour indiquer que nous ne nous soucions pas de la valeur.index est la seule valeur que nous utilisons réellement dans cette fonction .map() car nous en avons besoin pour déterminer si l'étoile doit être colorée ou non.
+  const rating = parseInt(foundIdData.rating);
+  // Générer un tableau de 5 étoiles vides. "_" est utilisé comme une variable anonyme pour représenter les éléments de l'array généré par .map(). Dans ce cas, nous n'avons pas besoin d'utiliser la valeur de chaque élément de l'array, nous utilisons donc "_" pour indiquer que nous ne nous soucions pas de la valeur, .index est la seule valeur que nous utilisons réellement dans cette fonction .map() car nous en avons besoin pour déterminer si l'étoile doit être colorée ou non.
   const stars = Array(5)
     .fill(null)
     .map((_, index) => (
@@ -20,17 +34,15 @@ const Accomodation = ({ housesData }) => {
       ></i>
     ));
 
-  
-
   return (
     <main className="accomodation-main">
-      <Slideshow house={house}  />
+      <Slideshow house={foundIdData} />
       <div className="title-and-location">
         <div className="titles">
-          <h1>{house.title}</h1>
-          <h2>{house.location}</h2>
+          <h1>{foundIdData.title}</h1>
+          <h2>{foundIdData.location}</h2>
           <div className="tags-container">
-            {house.tags.map((tag, index) => (
+            {foundIdData.tags.map((tag, index) => (
               <li key={index} className="tags">
                 {tag}
               </li>
@@ -39,10 +51,10 @@ const Accomodation = ({ housesData }) => {
         </div>
         <div className="host">
           <div className="host-infos">
-            <p className="break-words">{house.host.name}</p>
+            <p className="break-words">{foundIdData.host.name}</p>
             <img
-              src={house.host.picture}
-              alt={`Profil de ${house.host.name}`}
+              src={foundIdData.host.picture}
+              alt={`Profil de ${foundIdData.host.name}`}
             />
           </div>
           <div className="host-stars">{stars}</div>
@@ -51,12 +63,12 @@ const Accomodation = ({ housesData }) => {
       <div className="about-main-container">
         <div className="accomodation-accordion-item">
           {" "}
-          <Accordion title={"Description"} content={house.description} />
+          <Accordion title={"Description"} content={foundIdData.description} />
         </div>
         <div className="accomodation-accordion-item">
           <Accordion
             title={"Equipements"}
-            content={house.equipments.map((equip, index) => (
+            content={foundIdData.equipments.map((equip, index) => (
               <li key={index}>{equip}</li>
             ))}
           />
