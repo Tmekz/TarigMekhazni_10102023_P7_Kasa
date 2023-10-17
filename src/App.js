@@ -12,8 +12,8 @@ import housesData from "./assets/data/housesDB.json";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div id="page-container">
+    <div id="page-container">
+        <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Home housesData={housesData} />} />
@@ -25,8 +25,8 @@ const App = () => {
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
-      </div>
     </BrowserRouter>
+      </div>
   );
 };
 
