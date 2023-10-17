@@ -1,11 +1,7 @@
-.about-main {
- 
+.about-container {
+  padding: 0 10%;
 
-  .about-container {
-    padding: 0 10%;
-
-    @media screen and (max-width: 500px) {
-      padding: 0;
-    }
+  @media screen and (max-width: 500px) {
+    padding: 0;
   }
 }

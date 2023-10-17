@@ -33,15 +33,6 @@ main {
   min-height: 80vh;
 }
 
-/* Version desktop à partir de 1000px tu me fais ca */
-// @media screen and (min-width: 1000px) {
-//   header,
-//   main {
-//     margin: 40px 0px 63px 0px;
-//   }
-// }
-
-// en dessous de 500 tu me fais ca
 @media screen and (max-width: 1024px) {
   header,
   main {
@@ -49,17 +40,3 @@ main {
   }
 }
 
-// @media screen and (min-width: 501px) and (max-width: 1024px) {
-//   header,
-//   main {
-//     margin: 20px 20px 16px 20px;
-//   }
-// }
-
-// entre x et x tu me fais ca
-// @media screen and (min-width: 500px) and (max-width: 1000px) {
-//   header,
-//   main {
-//     margin: 40px 100px 63px 100px;
-//   }
-// }
