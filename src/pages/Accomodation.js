@@ -1,23 +1,27 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import Accordion from "../components/Accordion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Accomodation = ({ housesData }) => {
+  // renvoie un ID récupéré dans l'url
   const { id } = useParams();
-  const [foundIdData, setFoundIdData] = useState(null);
+
+  // renvoie les DATAS grace à l'id
+  const foundIdData = housesData.find((item) => item.id === id);
+
+  // param de react-router-dom pour renvoyer vers page 404
   const navigate = useNavigate();
 
-  // Utilisez un effet pour mettre à jour house en fonction de l'ID
+
+  // useNavigate doit être utilisé dans un useEffect voir "https://reactrouter.com/en/main/hooks/use-navigate"
   useEffect(() => {
-    const findIdUrl = housesData.find((item) => item.id === id);
-    if (findIdUrl) {
-      setFoundIdData(findIdUrl);
-    } else {
+    if (!foundIdData) {
       navigate("/404");
     }
-  }, [id, housesData, navigate]);
+  });
 
+  // Si data avec ID pas trouvé dans la BDD alors stop l'execution du composant pour eviter les erreurs "Cannot read properties of undefined"
   if (!foundIdData) {
     return null;
   }

@@ -34,11 +34,6 @@ const Slideshow = ({ house }) => {
 
     // Écoute les changements de la largeur de l'écran
     window.addEventListener("resize", determineScreenSize);
-
-    // Nettoie l'écouteur d'événement lors du démontage du composant
-    // return () => {
-    //   window.removeEventListener("resize", determineScreenSize);
-    // };
   }, []);
 
   return (
